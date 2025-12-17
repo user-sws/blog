@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 HTML 블로그</title>
+    <style>
+        /* 여기서부터 디자인(CSS)입니다 */
+        body {
+            font-family: 'Pretendard', -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 1.8rem; }
+        header p { margin: 5px 0 0; color: #ccc; font-size: 0.9rem; }
+        
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* 프로필 카드 디자인 */
+        .profile {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile h3 { margin-top: 0; }
+        
+        /* 글 목록 디자인 */
+        .post {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        .post:hover { transform: translateY(-3px); }
+        .post h2 { margin-top: 0; color: #222; }
+        .date { color: #888; font-size: 0.85rem; margin-bottom: 15px; display: block; }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.8rem;
+            margin-top: 50px;
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 600px) {
+            .container { width: 100%; padding: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Personal Blog</h1>
+        <p>HTML과 CSS로 만든 나만의 공간</p>
+    </header>
+
+    <div class="container">
+        <div class="profile">
+            <h3>👋 안녕하세요!</h3>
+            <p>이곳은 제가 공부한 내용과 일상을 기록하는 블로그입니다.<br>HTML 하나로 이렇게 깔끔한 사이트를 만들 수 있어요.</p>
+        </div>
+
+        <div class="post">
+            <h2>두 번째 글: HTML 사이트의 장점</h2>
+            <span class="date">2024년 5월 21일</span>
+            <p>HTML로 사이트를 만들면 서버 비용이 들지 않고, 내 마음대로 디자인을 1픽셀 단위까지 고칠 수 있다는 장점이 있습니다. GitHub Pages를 이용하면 호스팅도 공짜입니다.</p>
+        </div>
+
+        <div class="post">
+            <h2>첫 번째 글: 블로그를 시작하며</h2>
+            <span class="date">2024년 5월 20일</span>
+            <p>오늘 처음으로 코딩을 해서 내 사이트를 만들었습니다. 생각보다 어렵지 않고 재밌네요! 앞으로 꾸준히 기록을 남겨보겠습니다.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright 2024. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
