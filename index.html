@@ -3,99 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 HTML 블로그</title>
+    <title>나의 블로그</title>
     <style>
-        /* 여기서부터 디자인(CSS)입니다 */
-        body {
-            font-family: 'Pretendard', -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 1.8rem; }
-        header p { margin: 5px 0 0; color: #ccc; font-size: 0.9rem; }
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; display: flex; height: 100vh; background-color: #f9f9f9; }
         
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+        /* 사이드바 */
+        .sidebar { width: 300px; background-color: white; padding: 2rem; box-sizing: border-box; display: flex; flex-direction: column; border-right: 1px solid #eee; }
+        .sidebar h1 { font-size: 1.5rem; color: #333; margin-bottom: 20px; }
+        .sidebar p { color: #666; font-size: 0.9rem; line-height: 1.5; }
+        .link-btn { display: inline-block; margin-top: 20px; background-color: #2ea44f; color: white; text-decoration: none; padding: 10px 15px; border-radius: 6px; text-align: center; font-size: 0.9rem; }
 
-        /* 프로필 카드 디자인 */
-        .profile {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .profile h3 { margin-top: 0; }
+        /* 메인 콘텐츠 */
+        .main { flex: 1; padding: 3rem 5rem; overflow-y: auto; }
+        .loading { font-size: 1.2rem; color: #888; text-align: center; margin-top: 50px; }
         
-        /* 글 목록 디자인 */
-        .post {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-            transition: transform 0.2s;
-        }
-        .post:hover { transform: translateY(-3px); }
-        .post h2 { margin-top: 0; color: #222; }
-        .date { color: #888; font-size: 0.85rem; margin-bottom: 15px; display: block; }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #888;
-            font-size: 0.8rem;
-            margin-top: 50px;
-        }
+        .post-item { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px; transition: transform 0.2s; }
+        .post-item:hover { transform: translateY(-5px); }
+        .post-item h2 { margin-top: 0; color: #333; font-size: 1.6rem; }
+        .post-item .date { color: #999; font-size: 0.85rem; margin-bottom: 15px; display: block; }
+        .post-item p { color: #444; line-height: 1.7; font-size: 1rem; }
 
-        /* 모바일 대응 */
-        @media (max-width: 600px) {
-            .container { width: 100%; padding: 0 15px; }
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #eee; }
+            .main { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>My Personal Blog</h1>
-        <p>HTML과 CSS로 만든 나만의 공간</p>
-    </header>
+    <div class="sidebar">
+        <h1>나의 블로그</h1>
+        <p>
+            이 사이트는 <b>구글 스프레드시트</b>와<br>
+            연결되어 있습니다.<br><br>
+            제가 엑셀에 글을 쓰면<br>
+            실시간으로 이곳에 뜹니다.
+        </p>
+        <a href="https://docs.google.com/spreadsheets" target="_blank" class="link-btn">글쓰기</a>
+    </div>
 
-    <div class="container">
-        <div class="profile">
-            <h3>👋 안녕하세요!</h3>
-            <p>이곳은 제가 공부한 내용과 일상을 기록하는 블로그입니다.<br>HTML 하나로 이렇게 깔끔한 사이트를 만들 수 있어요.</p>
-        </div>
-
-        <div class="post">
-            <h2>두 번째 글: HTML 사이트의 장점</h2>
-            <span class="date">2024년 5월 21일</span>
-            <p>HTML로 사이트를 만들면 서버 비용이 들지 않고, 내 마음대로 디자인을 1픽셀 단위까지 고칠 수 있다는 장점이 있습니다. GitHub Pages를 이용하면 호스팅도 공짜입니다.</p>
-        </div>
-
-        <div class="post">
-            <h2>첫 번째 글: 블로그를 시작하며</h2>
-            <span class="date">2024년 5월 20일</span>
-            <p>오늘 처음으로 코딩을 해서 내 사이트를 만들었습니다. 생각보다 어렵지 않고 재밌네요! 앞으로 꾸준히 기록을 남겨보겠습니다.</p>
+    <div class="main">
+        <div id="postContainer">
+            <div class="loading">글을 불러오는 중입니다...</div>
         </div>
     </div>
 
-    <footer>
-        <p>Copyright 2024. All rights reserved.</p>
-    </footer>
+    <script>
+        // 입력하신 주소를 여기에 적용해 두었습니다.
+        const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbzYYHc5bwgJsiyk9twa2m6agqXhAj-rKbFeykaR9YwmjKgSvoYqHEFr7PqVPsAgyOoM/exec"; 
 
+        async function loadPosts() {
+            const container = document.getElementById('postContainer');
+            
+            try {
+                // 문제되던 검사 코드를 삭제했습니다. 바로 데이터를 가져옵니다.
+                const response = await fetch(SHEET_API_URL);
+                const data = await response.json();
+                
+                container.innerHTML = ''; // 로딩 문구 제거
+
+                // 데이터가 비어있지 않다면
+                if (data && data.length > 0) {
+                    // 최신 글이 위로 오게 (배열 뒤집기)
+                    data.reverse().forEach(post => {
+                        // 날짜가 있다면 10글자만 자르고, 없으면 빈칸
+                        const dateText = post.date ? String(post.date).substring(0, 10) : "";
+                        
+                        const html = `
+                            <div class="post-item">
+                                <h2>${post.title}</h2>
+                                <span class="date">${dateText}</span>
+                                <p>${String(post.content).replace(/\n/g, '<br>')}</p>
+                            </div>
+                        `;
+                        container.insertAdjacentHTML('beforeend', html);
+                    });
+                } else {
+                    container.innerHTML = '<div class="loading">작성된 글이 없습니다. 구글 시트에 글을 써보세요!</div>';
+                }
+
+            } catch (error) {
+                console.error(error);
+                container.innerHTML = '<div class="loading">글을 불러오는데 실패했습니다.<br>구글 시트 배포 설정을 확인해주세요.</div>';
+            }
+        }
+
+        loadPosts();
+    </script>
 </body>
 </html>
